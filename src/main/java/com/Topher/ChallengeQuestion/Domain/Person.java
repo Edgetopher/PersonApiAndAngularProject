@@ -1,20 +1,37 @@
 package com.Topher.ChallengeQuestion.Domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
-    private int id;
+
+    @Id
+    @GeneratedValue
+    @Column(name = "ID")
+    private Long id;
+    @Column(name = "NAME")
     private String name;
-    private String userName;
+    @Column(name = "USER_NAME")
+    private String username;
+    @Column(name = "EMAIL")
     private String email;
+    @Column(name = "ADDRESS")
     private Address address;
-    private String phoneNumber;
+    @Column(name = "PHONE_NUMBER")
+    private String phone;
+    @Column(name = "WEBSITE")
     private String website;
+    @Column(name = "COMPANY_OBJ")
     private Company company;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -26,12 +43,12 @@ public class Person {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public String getEmail() {
@@ -50,12 +67,12 @@ public class Person {
         this.address = address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phoneNumber) {
+        this.phone = phoneNumber;
     }
 
     public String getWebsite() {
@@ -78,4 +95,17 @@ public class Person {
 
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", userName='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", address=" + address +
+                ", phoneNumber='" + phone + '\'' +
+                ", website='" + website + '\'' +
+                ", company=" + company +
+                '}';
+    }
 }

@@ -1,8 +1,16 @@
 package com.Topher.ChallengeQuestion.Domain;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+
+@Embeddable
 public class Company {
+    @Column(name = "COMPANY_NAME")
     private String name;
+    @Column(name = "COMPANY_CATCH_PHRASE")
     private String catchPhrase;
+    @Column(name = "COMPANY_BS")
     private String bs;
 
     public String getName() {
@@ -33,4 +41,12 @@ public class Company {
 
     }
 
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", catchPhrase='" + catchPhrase + '\'' +
+                ", bs='" + bs + '\'' +
+                '}';
+    }
 }
